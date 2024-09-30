@@ -1,0 +1,158 @@
+# BOOK REQUEST
+
+GET http://localhost:5000/books
+
+###
+GET http://localhost:5000/books/1
+
+###
+POST http://localhost:5000/books
+Content-Type: application/json
+
+{
+    "code": "JK-45",
+    "title": "Harry Potter",
+    "author": "J.K Rowling",
+    "stock": "1"
+}
+
+###
+PATCH http://localhost:5000/books/1
+Content-Type: application/json
+
+{
+    "code": "SHR-1",
+    "title": "A Study in Scarlet",
+    "author": "Arthur Conan Doyle",
+    "stock": "1"
+}
+
+###
+DELETE http://localhost:5000/books/1
+
+
+# MEMBER REQUEST
+###
+GET http://localhost:5000/members
+
+###
+GET http://localhost:5000/members/1
+
+###
+POST http://localhost:5000/members
+Content-Type: application/json
+
+{
+    "code": "M001",
+    "name": "Angga"
+}
+
+###
+PATCH http://localhost:5000/members/1
+Content-Type: application/json
+
+{
+    "code": "M002",
+    "name": "Ferry"
+}
+
+###
+DELETE http://localhost:5000/members/1
+
+
+# MEMBER BORROW BOOK REQUEST
+###
+GET http://localhost:5000/memberborrowbooks
+
+###
+GET http://localhost:5000/memberborrowbooks/1
+
+###
+POST http://localhost:5000/memberborrowbooks
+Content-Type: application/json
+
+{
+    "book_id": 2,
+    "member_id": 2,
+    "start_date": "2023-09-25",
+    "end_date": "2023-10-05",
+    "date_penalty": "2023-11-20",
+    "quantity_borrow": 1
+}
+
+
+
+###
+PATCH http://localhost:5000/memberborrowbooks/1
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "member_id": 1,
+    "start_date": "2023-09-25",
+    "end_date": "2023-10-10",
+    "quantity_borrow": 2
+}
+
+###
+DELETE http://localhost:5000/memberborrowbooks/1
+
+
+# MEMBER PENALTIE
+###
+GET http://localhost:5000/memberpenalties
+
+###
+GET http://localhost:5000/memberpenalties/1
+
+###
+POST http://localhost:5000/memberpenalties
+Content-Type: application/json
+
+{
+    "memberborrowbook_id": 1,
+    "penalty_date": "2023-11-25"
+}
+
+###
+PATCH http://localhost:5000/memberpenalties/1
+Content-Type: application/json
+
+{
+    "memberborrowbook_id": 1,
+    "penalty_date": "2023-09-25"
+}
+
+
+###
+DELETE http://localhost:5000/memberpenalties/1
+
+# RETURN BOOK REQUEST
+###
+GET http://localhost:5000/returnbooks
+
+###
+GET http://localhost:5000/returnbooks/1
+
+###
+POST http://localhost:5000/returnbooks
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "member_id": 1,
+    "date": "2023-09-25"
+}
+
+###
+PATCH http://localhost:5000/returnbooks/1
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "member_id": 1,
+    "date": "2023-09-25"
+}
+
+###
+DELETE http://localhost:5000/returnbooks/1
